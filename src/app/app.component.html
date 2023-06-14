@@ -1,0 +1,11 @@
+<div *ngIf="nuevaTarea === false" class="flex items-center justify-center">
+  <div class="p-10 pb-0">
+    <app-boton texto="Agregar Tarea" (click)="displayNuevaTarea(true)" />
+  </div>
+</div>
+
+<div *ngIf="nuevaTarea === true" class="flex items-center justify-center">
+  <div class="p-10">
+    <app-tarea />
+  </div>
+</div>
