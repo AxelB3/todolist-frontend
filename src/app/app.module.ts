@@ -5,12 +5,13 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { TareaComponent } from './components/tarea/tarea.component';
 import { BotonComponent } from './components/boton/boton.component';
-
+import { TareaFormComponent } from './components/tareaForm/tareaForm.component';
 @NgModule({
   declarations: [
     AppComponent,
     TareaComponent,
-    BotonComponent
+    BotonComponent,
+    TareaFormComponent
   ],
   imports: [
     BrowserModule,

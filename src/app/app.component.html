@@ -6,6 +6,12 @@
 
 <div *ngIf="nuevaTarea === true" class="flex items-center justify-center">
   <div class="p-10">
-    <app-tarea />
+    <app-tarea-form/>
+  </div>
+</div>
+
+<div lass="flex items-center justify-center gap-3">
+  <div class="p-10">
+    <app-tarea [tarea]="tarea" *ngFor="let tarea of tareas"/>
   </div>
 </div>

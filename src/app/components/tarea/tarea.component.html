@@ -1,10 +1,14 @@
-<div class="border border-gray-400 flex flex-col rounded-md tarea-content">
-    <div class="p-2">
-        <input class="text-lg w-full focus:outline-0" placeholder="Titulo de tarea" type="text">
-        <input class="text-lg w-full focus:outline-0" placeholder="Descripción">
+<ng-container *ngIf="tarea">
+    <div *ngIf="editar == false" class="border-t border-gray-400 flex flex-col my-6 p-4">
+        <p class="text-lg"><strong>{{ tarea.titulo }}</strong></p>
+        <p>{{ tarea.descripcion }}</p>
+        <div class="sw-full flex justify-end p-2 gap-4" *ngIf="editar == false">
+            <app-boton texto="Editar" (click)="editarClick(true)"></app-boton>
+            <app-boton texto="Eliminar" variante="cancelar"></app-boton>
+        </div>
     </div>
-   <div class="border-t border-gray-400  w-full flex justify-end p-2 gap-4">
-        <app-boton texto="Cancelar" variante="cancelar" (click)="displayNuevaTarea(false)"></app-boton>
-        <app-boton texto="Guardar"></app-boton>
-   </div>
-</div>
+
+    <ng-container *ngIf="editar">
+        <app-tarea-form [editar]="editar" [titulo]="tarea.titulo" [descripcion]="tarea.descripcion"></app-tarea-form>
+    </ng-container>
+</ng-container>

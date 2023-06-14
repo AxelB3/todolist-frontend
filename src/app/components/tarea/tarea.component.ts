@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { AppComponent } from 'src/app/app.component';
+import { Component, Input} from '@angular/core';
+import { Tarea } from 'src/app/models/tarea.model';
 
 @Component({
   selector: 'app-tarea',
@@ -7,10 +7,10 @@ import { AppComponent } from 'src/app/app.component';
   styleUrls: ['./tarea.component.css']
 })
 export class TareaComponent {
-  constructor(private appComponent: AppComponent) { }
+  @Input() tarea!: Tarea ;
+  editar: boolean = false;
 
-  displayNuevaTarea(value: boolean){
-    this.appComponent.displayNuevaTarea(value)
+  editarClick(value: boolean){
+    this.editar = value 
   }
-
 }
