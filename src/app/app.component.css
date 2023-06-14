@@ -8,3 +8,9 @@
     background-color: #265D97;
   }
 
+div{
+  display: grid;
+  grid-template-columns: 
+    repeat(auto-fit, minmax(150px, 100%));
+  gap: 32px;
+}

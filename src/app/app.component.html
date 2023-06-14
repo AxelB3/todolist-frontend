@@ -1,6 +1,6 @@
 <div *ngIf="nuevaTarea === false" class="flex items-center justify-center">
   <div class="p-10 pb-0">
-    <app-boton texto="Agregar Tarea" (click)="displayNuevaTarea(true)" />
+    <app-boton texto="Agregar Tarea" (click)="displayNuevaTarea(true)" class="m-auto" />
   </div>
 </div>
 
@@ -10,7 +10,7 @@
   </div>
 </div>
 
-<div lass="flex items-center justify-center gap-3">
+<div class="">
   <div class="p-10">
     <app-tarea [tarea]="tarea" *ngFor="let tarea of tareas"/>
   </div>

@@ -4,11 +4,11 @@
         <p>{{ tarea.descripcion }}</p>
         <div class="sw-full flex justify-end p-2 gap-4" *ngIf="editar == false">
             <app-boton texto="Editar" (click)="editarClick(true)"></app-boton>
-            <app-boton texto="Eliminar" variante="cancelar"></app-boton>
+            <app-boton texto="Eliminar" variante="cancelar" (click)="eliminar()"></app-boton>
         </div>
     </div>
 
     <ng-container *ngIf="editar">
-        <app-tarea-form [editar]="editar" [titulo]="tarea.titulo" [descripcion]="tarea.descripcion"></app-tarea-form>
+        <app-tarea-editar [editar]="editar" [tarea]="tarea"></app-tarea-editar>
     </ng-container>
 </ng-container>
